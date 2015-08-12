@@ -12,3 +12,8 @@ git clone ssh://git@IP:2222/gitolite-admin.git
 # Ssh into the container
 ssh root@IP -p 2222
 
+or 
+
+ssh git@IP -p 2222
+
+to print gitolite info
