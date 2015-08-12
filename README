@@ -1,0 +1,14 @@
+# Dockerfile and init.sh are based on https://github.com/miracle2k/dockerfiles/tree/5f84dbe849bd2c93a5c7cf593537fc0e728ac1ed/gitolite
+
+# Build gitolite 
+sudo docker build -t USERNAME/gitolite .
+
+# Run gitolite
+sudo docker run --rm -p 2222:22 -e SSH_KEY="$(cat ~/.ssh/SSH_KEY.pub)" USERNAME/gitolite -p 2222
+
+# Clone gitolite-admin
+git clone ssh://git@IP:2222/gitolite-admin.git
+
+# Ssh into the container
+ssh root@IP -p 2222
+
